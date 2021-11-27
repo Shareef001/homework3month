@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create blog</title>
+</head>
+<body>
+<div>
+    <form action="/blog/createBlog/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <p>
+            <input type="submit" id="submit" value="submit">
+        </p>
+    </form>
+</div>
+
+</body>
+</html>

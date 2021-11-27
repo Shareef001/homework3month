@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a href="/blog/createBlog/">create new blog</a>
+    <ul>
+
+        {% for i in blogs%}
+        <h1>{{i.title}}</h1>
+        <p><img src="{{i.image.url}}" alt="image" width = "500px" height="500px"></p>
+        <p>Likes: {{i.likes}}</p>
+        <a href="/blog/{{i.id}}">View this blog</a>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail blog</title>
+</head>
+<body>
+<div>
+    <h1>Title: {{blog.title}}</h1>
+     <p><img src="{{blog.image.url}}" alt="image" width = "800px" height="800px"></p>
+        <p>Likes: {{blog.likes}}</p>
+    <p>Repost: {{blog.reposts}}</p>
+    <h3>Description</h3>
+    <p>
+        {{blog.description}}
+    </p>Date: {{blog.date}}</p>
+    <a href="/blog/{{blog.id}}/updateBlog/">update</a><br>
+        <a href="/blog/">Back to all blogs</a>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>
+            <input type="text" name="text" placeholder="leave">
+            <input type="submit" value="Add comment">
+        </p>
+    </form>
+    <h3>Comments</h3>
+    <ul>
+        {% for i in comments%}
+        <li>
+            <p><b>{{i.text}} </b> {{i.date}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+</div>
+
+</body>
+</html>
